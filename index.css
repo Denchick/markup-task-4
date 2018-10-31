@@ -1,0 +1,66 @@
+.item
+{
+    padding: 0;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
+.item:hover
+{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+}
+
+.item img
+{
+    width: 300px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+.item .description
+{
+    margin: 10px;
+}
+
+.view-style[type=checkbox]:checked~.items > .item
+{
+    display: block;
+    width: 500px;
+    box-shadow: none;
+    margin: 0;
+}
+
+.view-style[type=checkbox]:checked~.items > .item img
+{
+    padding: 10px;
+    padding-bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.view-style[type=checkbox] {
+    display:none;
+  }
+  .view-style[type=checkbox] + label
+   {
+       background: #999;
+       height: 16px;
+       width: 16px;
+       display:inline-block;
+       padding: 0 0 0 0px;
+   }
+   
+   .view-style[type=checkbox]:checked + label
+    {
+        background: #0080FF;
+        height: 16px;
+        width: 16px;
+        display:inline-block;
+        padding: 0 0 0 0px;
+    }
