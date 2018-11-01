@@ -1,7 +1,29 @@
+.items
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    margin: 10px;
+}
+
+.items h2
+{
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.items h2 a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
 .item
 {
-    padding: 0;
-    margin: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
     width: 300px;
     display: inline-block;
     border: 1px solid #ccc;
@@ -9,32 +31,70 @@
 
 .item:hover
 {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .1), 0 10px 10px rgba(0, 0,0 , .1);
+}
+
+.item h2:hover
+{
+    text-decoration: underline;
 }
 
 .item img
 {
     width: 300px;
     height: 200px;
-    box-sizing: border-box;
+    background-size: cover;
 }
 
-.item .description
+.item img:hover
 {
-    margin: 10px;
+    width: 330px;
+    height: 230px;
+    margin: -15px;
 }
 
-.view-style[type=checkbox]:checked~.items > .item
+.item .description li
+{
+    list-style-type: none;
+}
+
+.item .description ul
+{
+    padding: 0;
+    margin: 0;
+}
+
+.item .full-description
+{
+    display: none;
+}
+
+input[type='checkbox']:checked ~ .items .full-description
+{
+    display: block;
+}
+
+input[type='checkbox']:checked ~ .items .short-description
+{
+    display: none;
+}
+
+.item .description ul :last-child
+{
+    padding-top: 10px;
+}
+
+input[type='checkbox']:checked ~ .items > .item
 {
     display: block;
     width: 500px;
     box-shadow: none;
-    margin: 0;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
-.view-style[type=checkbox]:checked~.items > .item img
+input[type='checkbox']:checked ~ .items > .item img
 {
-    padding: 10px;
     padding-bottom: 0;
     max-width: 100%;
     max-height: 100%;
@@ -44,23 +104,32 @@
     margin: 0 auto;
 }
 
-.view-style[type=checkbox] {
-    display:none;
-  }
-  .view-style[type=checkbox] + label
-   {
-       background: #999;
-       height: 16px;
-       width: 16px;
-       display:inline-block;
-       padding: 0 0 0 0px;
-   }
+input[type='checkbox']:checked ~ .items > .item img
+{
+    padding-bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+input[type='checkbox']
+{
+    display: none;
+}
+
+input[type='checkbox'] + label
+{
+    background: url('images/tiles.png') no-repeat center;
+    height: 20px;
+    width: 25px;
+    display: inline-block;
+    margin: 10px;
+}
    
-   .view-style[type=checkbox]:checked + label
-    {
-        background: #0080FF;
-        height: 16px;
-        width: 16px;
-        display:inline-block;
-        padding: 0 0 0 0px;
-    }
+input[type='checkbox']:checked + label
+{
+    background: url('images/list.png') no-repeat center;
+}
