@@ -11,6 +11,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-top: 0;
 }
 
 .items h2 a
@@ -21,7 +22,6 @@
 
 .item
 {
-    padding: 15px;
     margin-bottom: 10px;
     margin-right: 10px;
     width: 300px;
@@ -31,7 +31,7 @@
 
 .item:hover
 {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, .1), 0 10px 10px rgba(0, 0,0 , .1);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .1), 0 10px 10px rgba(0, 0, 0, .1);
 }
 
 .item h2:hover
@@ -39,8 +39,16 @@
     text-decoration: underline;
 }
 
+.item .full-description:hover,
+.item .short-description:hover
+{
+    font-style: italic;
+}
+
 .item img
 {
+    box-sizing: border-box;
+    padding: 15px;
     width: 300px;
     height: 200px;
     background-size: cover;
@@ -51,6 +59,11 @@
     width: 330px;
     height: 230px;
     margin: -15px;
+}
+
+.item .description
+{
+    padding: 0 15px 15px;
 }
 
 .item .description li
@@ -79,9 +92,25 @@ input[type='checkbox']:checked ~ .items .short-description
     display: none;
 }
 
+input[type='checkbox']:checked ~ .items img:hover
+{
+    background-color: rgba(0, 0, 0, .4);
+}
+
 .item .description ul :last-child
 {
     padding-top: 10px;
+}
+
+input[type='checkbox']:checked ~ .items
+{
+    width: 540px;
+    margin: 0 auto;
+}
+
+input[type='checkbox']:checked ~ .items h2
+{
+    padding: 10px 0;
 }
 
 input[type='checkbox']:checked ~ .items > .item
